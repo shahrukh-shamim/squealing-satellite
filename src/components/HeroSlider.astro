@@ -1,0 +1,254 @@
+---
+
+---
+
+<section class="hero-slider">
+  <button class="nav-arrow left" aria-label="Previous slide">
+    &#8249;
+  </button>
+
+  <div class="container hero-content">
+    <div class="hero-copy">
+      <h1>
+        Little Moments,<br />
+        <span>Big Memories</span>
+      </h1>
+
+      <p>
+        Sharing simple joys of motherhood, cozy home inspiration,
+        and the beauty of everyday life.
+      </p>
+
+      <a href="#" class="hero-btn">
+        Explore My World <span>♡</span>
+      </a>
+    </div>
+  </div>
+
+  <button class="nav-arrow right" aria-label="Next slide">
+    &#8250;
+  </button>
+
+  <div class="dots" aria-label="Slide indicators">
+    <span class="dot"></span>
+    <span class="dot active"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+<style>
+  .hero-slider {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+      linear-gradient(
+        to right,
+        rgba(250, 246, 242, 0.96) 0%,
+        rgba(250, 246, 242, 0.92) 26%,
+        rgba(250, 246, 242, 0.72) 40%,
+        rgba(250, 246, 242, 0.20) 56%,
+        rgba(250, 246, 242, 0.03) 68%,
+        rgba(250, 246, 242, 0) 100%
+      ),
+      url("/hero.jpg");
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-copy {
+    max-width: 410px;
+    padding-left: 48px;
+  }
+
+  .hero-copy h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 4rem;
+    line-height: 1.08;
+    font-weight: 500;
+    color: #6f564d;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-copy h1 span {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 3.6rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #d2a59d;
+  }
+
+  .hero-copy p {
+    max-width: 320px;
+    margin: 22px 0 28px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #7f6a61;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    background: #c79b76;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.96rem;
+    box-shadow: 0 8px 18px rgba(199, 155, 118, 0.18);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .hero-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+  }
+
+  .nav-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #b89073;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-arrow.left {
+    left: 18px;
+  }
+
+  .nav-arrow.right {
+    right: 18px;
+  }
+
+  .dots {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    z-index: 3;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .dot.active {
+    background: #fff;
+    transform: scale(1.06);
+  }
+
+  @media (max-width: 900px) {
+    .hero-slider {
+      min-height: 440px;
+      background-position: 68% center;
+    }
+
+    .hero-copy {
+      max-width: 340px;
+      padding-left: 26px;
+    }
+
+    .hero-copy h1 {
+      font-size: 3rem;
+    }
+
+    .hero-copy h1 span {
+      font-size: 2.8rem;
+    }
+
+    .nav-arrow {
+      width: 46px;
+      height: 46px;
+      font-size: 1.7rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-slider {
+      min-height: 500px;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(250, 246, 242, 0.92) 0%,
+          rgba(250, 246, 242, 0.82) 36%,
+          rgba(250, 246, 242, 0.24) 62%,
+          rgba(250, 246, 242, 0.06) 100%
+        ),
+        url("/hero.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      width: min(100% - 24px, 1180px);
+    }
+
+    .hero-copy {
+      max-width: 100%;
+      padding: 0 34px;
+      text-align: center;
+    }
+
+    .hero-copy p {
+      max-width: 100%;
+    }
+
+    .hero-copy h1 {
+      font-size: 2.45rem;
+    }
+
+    .hero-copy h1 span {
+      font-size: 2.2rem;
+    }
+
+    .hero-btn {
+      justify-content: center;
+    }
+
+    .nav-arrow {
+      width: 42px;
+      height: 42px;
+      font-size: 1.5rem;
+    }
+
+    .nav-arrow.left {
+      left: 10px;
+    }
+
+    .nav-arrow.right {
+      right: 10px;
+    }
+  }
+</style>

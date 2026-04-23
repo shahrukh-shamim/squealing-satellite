@@ -1,0 +1,250 @@
+---
+
+const features = [
+  {
+    title: "Motherhood",
+    text: "Thoughts, tips & real mom moments",
+    icon: "♡",
+  },
+  {
+    title: "Home & Decor",
+    text: "Cozy ideas for beautiful spaces",
+    icon: "⌂",
+  },
+  {
+    title: "Lifestyle",
+    text: "Simple living and daily inspiration",
+    icon: "❦",
+  },
+  {
+    title: "Favorites",
+    text: "Things we love and recommend",
+    icon: "☆",
+  },
+];
+---
+
+<section class="about-intro">
+  <div class="container intro-grid">
+    <div class="intro-image-wrap">
+      <img 
+        src="/about-sana.jpg" 
+        alt="Mother and daughter baking together" 
+        class="intro-image" 
+        loading="lazy"
+        />
+      <div class="leaf-deco">❦</div>
+    </div>
+
+    <div class="intro-copy">
+      <p class="eyebrow">Hi, I'm Sana ♡</p>
+
+      <h2>
+        A mama, a homemaker,<br />
+        and a lover of all little things.
+      </h2>
+
+      <p class="body-text">
+        I'm here to share pieces of our real life the beautiful, the messy,
+        and everything in between. From cozy home moments to motherhood joys,
+        I’m so happy you're here.
+      </p>
+
+      <a href="#" class="outline-btn">More About Me ♡</a>
+    </div>
+
+    <div class="intro-features">
+      {features.map((feature) => (
+        <article class="feature-item">
+          <div class="feature-icon">{feature.icon}</div>
+          <div>
+            <h3>{feature.title}</h3>
+            <p>{feature.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-intro {
+    padding: 56px 0 34px;
+    background: #fbf7f3;
+  }
+
+  .container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr 0.92fr;
+    gap: 34px;
+    align-items: center;
+  }
+
+  .intro-image-wrap {
+    position: relative;
+  }
+
+  .intro-image {
+    width: 100%;
+    display: block;
+    border-radius: 34px;
+    aspect-ratio: 1 / 0.9;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(113, 90, 76, 0.08);
+  }
+
+  .leaf-deco {
+    position: absolute;
+    left: -18px;
+    bottom: 14px;
+    font-size: 3rem;
+    color: #dfc5b2;
+    opacity: 0.95;
+  }
+
+  .intro-copy {
+    align-self: center;
+  }
+
+  .eyebrow {
+    margin: 0 0 18px;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    color: #8d7064;
+  }
+
+  .intro-copy h2 {
+    margin: 0 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    line-height: 1.45;
+    font-weight: 500;
+    color: #70594e;
+  }
+
+  .body-text {
+    margin: 0 0 26px;
+    max-width: 360px;
+    font-size: 1rem;
+    line-height: 1.95;
+    color: #7f6b61;
+  }
+
+  .outline-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid #dbc2ae;
+    color: #927567;
+    background: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-size: 0.96rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .outline-btn:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+
+  .intro-features {
+    display: grid;
+    gap: 20px;
+  }
+
+  .feature-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    background: #f6ebe4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: #c6a28a;
+  }
+
+  .feature-item h3 {
+    margin: 0 0 6px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #6f584e;
+  }
+
+  .feature-item p {
+    margin: 0;
+    max-width: 220px;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: #857167;
+  }
+
+  @media (max-width: 1024px) {
+    .intro-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .intro-features {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 6px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .about-intro {
+      padding: 42px 0 22px;
+    }
+
+    .container {
+      width: min(100% - 24px, 1180px);
+    }
+
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+
+    .intro-features {
+      grid-template-columns: 1fr;
+    }
+
+    .eyebrow {
+      font-size: 2rem;
+    }
+
+    .intro-copy h2 {
+      font-size: 1.65rem;
+    }
+
+    .body-text,
+    .feature-item p {
+      max-width: none;
+    }
+
+    .leaf-deco {
+      left: -6px;
+      bottom: 8px;
+      font-size: 2.3rem;
+    }
+  }
+</style>

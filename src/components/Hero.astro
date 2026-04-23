@@ -1,0 +1,87 @@
+---
+
+---
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>
+        Little Moments,<br />
+        <span>Big Memories</span>
+      </h1>
+
+      <p>
+        Sharing simple joys of motherhood, cozy home inspiration,
+        and the beauty of everyday life.
+      </p>
+
+      <a href="#" class="btn">Explore My World ♡</a>
+    </div>
+
+    <div class="hero-image"></div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 60px 0;
+    background: #f8f3ef;
+  }
+
+  .container {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: #6e5a4f;
+    margin: 0 0 16px;
+  }
+
+  .hero-text span {
+    color: #c49b7b;
+    font-style: italic;
+  }
+
+  .hero-text p {
+    color: #7d685d;
+    margin-bottom: 24px;
+    max-width: 420px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: #c49b7b;
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .hero-image {
+    height: 360px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #d8c1ae, #f0e2d7);
+  }
+
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-text p {
+      margin: 0 auto 24px;
+    }
+  }
+</style>
