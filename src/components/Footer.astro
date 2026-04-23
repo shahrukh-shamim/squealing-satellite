@@ -6,6 +6,7 @@ const quickLinks = [
   { label: "Blog", href: "#" },
   { label: "Contact", href: "#" },
 ];
+const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
@@ -14,12 +15,12 @@ const quickLinks = [
       <p class="strip-title">A Little Glimpse on Instagram</p>
 
       <div class="strip-grid">
-        <div class="ig-card"></div>
-        <div class="ig-card"></div>
-        <div class="ig-card"></div>
-        <div class="ig-card"></div>
-        <div class="ig-card"></div>
-        <div class="ig-card"></div>
+        <img src="/instagram/ig1.jpg" alt="" class="ig-card" loading="lazy" />
+        <img src="/instagram/ig2.jpg" alt="" class="ig-card" loading="lazy" />
+        <img src="/instagram/ig3.jpg" alt="" class="ig-card" loading="lazy" />
+        <img src="/instagram/ig4.jpg" alt="" class="ig-card" loading="lazy" />
+        <img src="/instagram/ig5.jpg" alt="" class="ig-card" loading="lazy" />
+        <img src="/instagram/ig6.jpg" alt="" class="ig-card" loading="lazy" />
       </div>
     </div>
   </div>
@@ -53,7 +54,7 @@ const quickLinks = [
       </div>
 
       <div class="copyright">
-        <p>© 2024 Little Home.</p>
+        <p>© {year} Little Home.</p>
         <p>All rights reserved.</p>
       </div>
     </div>
@@ -91,11 +92,11 @@ const quickLinks = [
   }
 
   .ig-card {
-    aspect-ratio: 1 / 0.72;
+    width: 100%;
+    aspect-ratio: 1 / 0.75;
+    object-fit: cover;
     border-radius: 10px;
-    background:
-      linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)),
-      linear-gradient(135deg, #d8c1ae, #f0e2d7);
+    display: block;
   }
 
   .footer-main {

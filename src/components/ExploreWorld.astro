@@ -96,6 +96,7 @@ const cards = [
     border-radius: 24px;
     background: #f1e7df;
     box-shadow: 0 18px 34px rgba(113, 90, 76, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
   .card-image {
@@ -148,6 +149,11 @@ const cards = [
 
   .card-label a:hover {
     color: #b2886e;
+  }
+  
+  .world-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 44px rgba(113, 90, 76, 0.12);
   }
 
   @media (max-width: 1024px) {

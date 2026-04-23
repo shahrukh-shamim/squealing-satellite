@@ -48,6 +48,14 @@ const navItems = [
 </header>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section {
+    margin-bottom: 20px;
+  }
+
   .site-header {
     background: #f8f3ef;
     color: #6e5a4f;
@@ -179,6 +187,19 @@ const navItems = [
     align-items: center;
     justify-content: center;
     line-height: 1;
+  }
+
+  .btn,
+  .hero-btn,
+  .newsletter-form button {
+    transition: all 0.2s ease;
+  }
+  
+  .btn:hover,
+  .hero-btn:hover,
+  .newsletter-form button:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
   }
 
   @media (max-width: 960px) {
