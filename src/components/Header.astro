@@ -1,0 +1,225 @@
+---
+
+const navItems = [
+  { label: "Home", href: "#", active: true },
+  { label: "About", href: "#" },
+  { label: "Blog", href: "#" },
+  { label: "Shop", href: "#" },
+  { label: "Favorites", href: "#" },
+  { label: "Contact", href: "#" },
+];
+---
+
+<header class="site-header">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p>♡ Welcome to our little corner of love, life & everything in between</p>
+      <p>New Blog Post Every Monday!</p>
+    </div>
+  </div>
+
+  <div class="container navbar">
+    <a href="#" class="brand">
+      <span class="brand-script">Little Home ♡</span>
+      <span class="brand-sub">MOTHERHOOD & LIFESTYLE</span>
+    </a>
+
+    <nav class="nav">
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class={item.active ? "active" : ""}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="actions" aria-label="Header actions">
+      <button aria-label="Search">⌕</button>
+      <button aria-label="Wishlist">♡</button>
+      <button aria-label="Cart" class="cart-btn">
+        🛍
+        <span class="badge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: #f8f3ef;
+    color: #6e5a4f;
+    border-bottom: 1px solid rgba(110, 90, 79, 0.08);
+  }
+
+  .container {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .topbar {
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(110, 90, 79, 0.08);
+  }
+
+  .topbar-inner {
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .topbar p {
+    margin: 0;
+    color: #8d786d;
+    white-space: nowrap;
+  }
+
+  .navbar {
+    min-height: 92px;
+    display: grid;
+    grid-template-columns: 220px 1fr 140px;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .brand {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .brand-script {
+    font-size: 2rem;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    color: #7d6256;
+  }
+
+  .brand-sub {
+    margin-top: 4px;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    color: #9b8578;
+  }
+
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+  }
+
+  .nav a {
+    position: relative;
+    text-decoration: none;
+    color: #77645a;
+    font-size: 1rem;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+
+  .nav a:hover,
+  .nav a.active {
+    color: #b2876b;
+  }
+
+  .nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background: #c49b7b;
+    border-radius: 999px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .actions button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(110, 90, 79, 0.12);
+    background: transparent;
+    border-radius: 999px;
+    color: #7b675c;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .cart-btn {
+    position: relative;
+  }
+
+  .badge {
+    position: absolute;
+    top: -4px;
+    right: -2px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: #c59b7b;
+    color: #fff;
+    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  @media (max-width: 960px) {
+    .topbar-inner {
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 0;
+    }
+
+    .topbar p {
+      white-space: normal;
+      text-align: center;
+    }
+
+    .navbar {
+      grid-template-columns: 1fr;
+      padding: 18px 0 22px;
+    }
+
+    .brand,
+    .actions {
+      justify-self: center;
+    }
+
+    .nav ul {
+      flex-wrap: wrap;
+      gap: 16px 24px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .brand-script {
+      font-size: 1.65rem;
+    }
+
+    .nav ul {
+      gap: 12px 18px;
+    }
+
+    .nav a {
+      font-size: 0.95rem;
+    }
+  }
+</style>

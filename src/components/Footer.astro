@@ -1,0 +1,212 @@
+---
+
+const quickLinks = [
+  { label: "About", href: "#" },
+  { label: "Shop", href: "#" },
+  { label: "Blog", href: "#" },
+  { label: "Contact", href: "#" },
+];
+---
+
+<footer class="site-footer">
+  <div class="instagram-strip">
+    <div class="container">
+      <p class="strip-title">A Little Glimpse on Instagram</p>
+
+      <div class="strip-grid">
+        <div class="ig-card"></div>
+        <div class="ig-card"></div>
+        <div class="ig-card"></div>
+        <div class="ig-card"></div>
+        <div class="ig-card"></div>
+        <div class="ig-card"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-main">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="brand">
+          <span class="brand-script">Little Home ♡</span>
+          <span class="brand-sub">MOTHERHOOD & LIFESTYLE</span>
+        </a>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          {quickLinks.map((link) => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Let’s Connect</h4>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="Pinterest">◌</a>
+          <a href="#" aria-label="YouTube">▷</a>
+          <a href="#" aria-label="Email">✉</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2024 Little Home.</p>
+        <p>All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #f8f3ef;
+    color: #6f5d52;
+    margin-top: 40px;
+    border-top: 1px solid rgba(110, 90, 79, 0.08);
+  }
+
+  .container {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .instagram-strip {
+    padding: 22px 0 18px;
+  }
+
+  .strip-title {
+    text-align: center;
+    margin: 0 0 18px;
+    font-size: 1.15rem;
+    color: #7d685d;
+  }
+
+  .strip-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+  }
+
+  .ig-card {
+    aspect-ratio: 1 / 0.72;
+    border-radius: 10px;
+    background:
+      linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)),
+      linear-gradient(135deg, #d8c1ae, #f0e2d7);
+  }
+
+  .footer-main {
+    padding: 24px 0 34px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .brand {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .brand-script {
+    font-size: 2rem;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    color: #7d6256;
+  }
+
+  .brand-sub {
+    margin-top: 4px;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    color: #9b8578;
+  }
+
+  h4 {
+    margin: 0 0 12px;
+    font-size: 0.95rem;
+    color: #7d695e;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li + li {
+    margin-top: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #7d685d;
+  }
+
+  a:hover {
+    color: #b2876b;
+  }
+
+  .socials {
+    display: flex;
+    gap: 12px;
+    font-size: 1.25rem;
+  }
+
+  .socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid rgba(110, 90, 79, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fffaf6;
+  }
+
+  .copyright p {
+    margin: 0 0 6px;
+    color: #8e7a6e;
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 960px) {
+    .strip-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .strip-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      justify-content: center;
+    }
+
+    .socials {
+      justify-content: center;
+    }
+  }
+</style>
